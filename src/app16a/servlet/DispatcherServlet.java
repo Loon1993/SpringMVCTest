@@ -15,7 +15,7 @@ import app16a.controller.SaveProductController;
 /**
  * Servlet implementation class DispatcherServlet
  */
-@WebServlet("/product_input.action")
+@WebServlet(name="DispatcherServlet",urlPatterns={"/product_input.action","/product_save.action"})
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,7 +41,8 @@ public class DispatcherServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("Get a Post!");
+		process(request, response);
 	}
 
 	private void process(HttpServletRequest request,HttpServletResponse response)
